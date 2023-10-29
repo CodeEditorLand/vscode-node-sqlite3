@@ -1,23 +1,27 @@
 {
   "name": "@vscode/sqlite3",
-  "description": "Asynchronous, non-blocking SQLite3 bindings",
   "version": "0.0.1",
+  "private": "false",
+  "description": "Asynchronous, non-blocking SQLite3 bindings",
+  "keywords": [
+    "sql",
+    "sqlite",
+    "sqlite3",
+    "database"
+  ],
   "homepage": "https://github.com/CodeEditorLand/CodeEditorLand#readme",
+  "bugs": {
+    "url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeEditorLand/CodeEditorLand.git"
+  },
+  "license": "MIT",
   "author": {
     "name": "Nikola Hristov",
-    "url": "https://nikolahristov.tech",
-    "email": "nikola@nikolahristov.tech"
-  },
-  "binary": {
-    "module_name": "node_sqlite3",
-    "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
-    "host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
-    "remote_path": "v{version}",
-    "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
-    "napi_versions": [
-      3,
-      6
-    ]
+    "email": "nikola@nikolahristov.tech",
+    "url": "https://nikolahristov.tech"
   },
   "contributors": [
     "Konstantin Käfer <mail@kkaefer.com>",
@@ -37,6 +41,10 @@
     "Mithgol",
     "Ben Noordhuis <ben@strongloop.com>"
   ],
+  "publisher": "playform",
+  "type": "module",
+  "main": "./lib/sqlite3",
+  "types": "./lib/sqlite3.d.ts",
   "files": [
     "binding.gyp",
     "deps/",
@@ -44,9 +52,22 @@
     "lib/*.d.ts",
     "src/"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CodeEditorLand/CodeEditorLand.git"
+  "binary": {
+    "module_name": "node_sqlite3",
+    "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
+    "remote_path": "v{version}",
+    "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
+    "host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
+    "napi_versions": [
+      3,
+      6
+    ]
+  },
+  "scripts": {
+    "pack": "node-pre-gyp package",
+    "prepublishOnly": "TypeScriptESBuild Source/**/*.ts",
+    "pretest": "node test/support/createdb.js",
+    "test": "mocha -R spec --timeout 480000"
   },
   "dependencies": {
     "node-addon-api": "7.0.0",
@@ -58,32 +79,12 @@
     "mocha": "10.2.0",
     "typescript-esbuild": "0.3.1"
   },
-  "scripts": {
-    "pretest": "node test/support/createdb.js",
-    "test": "mocha -R spec --timeout 480000",
-    "pack": "node-pre-gyp package",
-    "prepublishOnly": "TypeScriptESBuild Source/**/*.ts"
+  "publishConfig": {
+    "access": "public"
   },
-  "license": "MIT",
-  "keywords": [
-    "sql",
-    "sqlite",
-    "sqlite3",
-    "database"
-  ],
-  "main": "./lib/sqlite3",
-  "types": "./lib/sqlite3.d.ts",
   "renovate": {
     "extends": [
       "@tryghost:base"
     ]
-  },
-  "bugs": {
-    "url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
-  },
-  "type": "module",
-  "private": "false",
-  "publishConfig": {
-    "access": "public"
   }
 }
