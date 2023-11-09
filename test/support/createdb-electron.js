@@ -1,8 +1,10 @@
-var { app } = require("electron");
-var createdb = require("./createdb.js");
+
+var {app} = require('electron');
+var createdb = require('./createdb.js');
 
 createdb(function () {
-	setTimeout(function () {
-		app.quit();
-	}, 20000);
+    setTimeout(function () {
+        app.quit();
+    }, 20000);
 });
+
