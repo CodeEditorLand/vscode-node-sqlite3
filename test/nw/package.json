@@ -1,6 +1,6 @@
 {
-  "name": "nw-demo",
   "main": "index.html",
+  "name": "nw-demo",
   "window": {
     "height": 600,
     "toolbar": false,

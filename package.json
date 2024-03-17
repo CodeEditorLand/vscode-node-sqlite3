@@ -1,16 +1,18 @@
 {
-  "name": "@vscode/sqlite3",
-  "version": "5.1.6-vscode",
-  "description": "Asynchronous, non-blocking SQLite3 bindings",
-  "homepage": "https://github.com/microsoft/vscode-node-sqlite3",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/microsoft/vscode-node-sqlite3.git"
-  },
-  "license": "BSD-3-Clause",
   "author": {
     "name": "Mapbox",
     "url": "https://mapbox.com/"
+  },
+  "binary": {
+    "host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
+    "module_name": "node_sqlite3",
+    "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
+    "napi_versions": [
+      3,
+      6
+    ],
+    "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
+    "remote_path": "v{version}"
   },
   "contributors": [
     "Konstantin Käfer <mail@kkaefer.com>",
@@ -30,8 +32,15 @@
     "Mithgol",
     "Ben Noordhuis <ben@strongloop.com>"
   ],
-  "main": "./lib/sqlite3",
-  "types": "./lib/sqlite3.d.ts",
+  "dependencies": {
+    "node-addon-api": "4.2.0",
+    "tar": "6.1.11"
+  },
+  "description": "Asynchronous, non-blocking SQLite3 bindings",
+  "devDependencies": {
+    "electron": "22.3.25",
+    "mocha": "7.2.0"
+  },
   "files": [
     "binding.gyp",
     "deps/",
@@ -39,31 +48,22 @@
     "lib/*.d.ts",
     "src/"
   ],
-  "binary": {
-    "module_name": "node_sqlite3",
-    "module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
-    "remote_path": "v{version}",
-    "package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
-    "host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
-    "napi_versions": [
-      3,
-      6
-    ]
-  },
-  "scripts": {
-    "pack": "node-pre-gyp package"
-  },
-  "dependencies": {
-    "node-addon-api": "^4.2.0",
-    "tar": "^6.1.11"
-  },
-  "devDependencies": {
-    "electron": "22.3.25",
-    "mocha": "7.2.0"
-  },
+  "homepage": "https://github.com/microsoft/vscode-node-sqlite3",
+  "license": "BSD-3-Clause",
+  "main": "./lib/sqlite3",
+  "name": "@vscode/sqlite3",
   "renovate": {
     "extends": [
       "@tryghost:base"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode-node-sqlite3.git"
+  },
+  "scripts": {
+    "pack": "node-pre-gyp package"
+  },
+  "types": "./lib/sqlite3.d.ts",
+  "version": "5.1.6-vscode"
 }
