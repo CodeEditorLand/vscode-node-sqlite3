@@ -65,8 +65,8 @@
 		"prepublishOnly": "Build 'Source/**/*.ts'"
 	},
 	"dependencies": {
-		"node-addon-api": "^4.2.0",
-		"tar": "^6.1.11"
+		"node-addon-api": "8.0.0",
+		"tar": "7.0.1"
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.7",
