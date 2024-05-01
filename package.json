@@ -1,22 +1,24 @@
 {
-	"author": {
-		"email": "Land@PlayForm.Cloud",
-		"name": "🌆 — Land —",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
-	"binary": {
-		"host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
-		"module_name": "node_sqlite3",
-		"module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
-		"napi_versions": [
-			3,
-			6
-		],
-		"package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
-		"remote_path": "v{version}"
-	},
+	"name": "@vscode/sqlite3",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Asynchronous, non-blocking SQLite3 bindings",
+	"keywords": [
+		"land"
+	],
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandNodeSQLite3#readme",
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandNodeSQLite3/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandNodeSQLite3.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "🌆 — Land —",
+		"email": "Land@PlayForm.Cloud",
+		"url": "HTTPS://Land.PlayForm.Cloud"
 	},
 	"contributors": [
 		"Konstantin Käfer <mail@kkaefer.com>",
@@ -36,15 +38,9 @@
 		"Mithgol",
 		"Ben Noordhuis <ben@strongloop.com>"
 	],
-	"dependencies": {
-		"node-addon-api": "8.0.0",
-		"tar": "7.0.1"
-	},
-	"description": "Asynchronous, non-blocking SQLite3 bindings",
-	"devDependencies": {
-		"@playform/build": "0.0.7",
-		"@playform/document": "0.0.6"
-	},
+	"type": "module",
+	"main": "./lib/sqlite3",
+	"types": "./lib/sqlite3.d.ts",
 	"files": [
 		"binding.gyp",
 		"deps/",
@@ -52,14 +48,30 @@
 		"lib/*.d.ts",
 		"src/"
 	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandNodeSQLite3#readme",
-	"keywords": [
-		"land"
-	],
-	"license": "SEE LICENSE IN LICENSE",
-	"main": "./lib/sqlite3",
-	"name": "@vscode/sqlite3",
-	"private": false,
+	"binary": {
+		"module_name": "node_sqlite3",
+		"module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
+		"remote_path": "v{version}",
+		"package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
+		"host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
+		"napi_versions": [
+			3,
+			6
+		]
+	},
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"pack": "node-pre-gyp package",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
+	},
+	"dependencies": {
+		"node-addon-api": "8.0.0",
+		"tar": "7.0.1"
+	},
+	"devDependencies": {
+		"@playform/build": "0.0.7",
+		"@playform/document": "0.0.6"
+	},
 	"publishConfig": {
 		"access": "public"
 	},
@@ -67,17 +79,5 @@
 		"extends": [
 			"@tryghost:base"
 		]
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandNodeSQLite3.git"
-	},
-	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
-		"pack": "node-pre-gyp package",
-		"prepublishOnly": "Build 'Source/**/*.ts'"
-	},
-	"type": "module",
-	"types": "./lib/sqlite3.d.ts",
-	"version": "0.0.1"
+	}
 }
