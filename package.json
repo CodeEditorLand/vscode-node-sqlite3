@@ -1,25 +1,6 @@
 {
 	"name": "@vscode/sqlite3",
-	"version": "0.0.1",
-	"private": false,
 	"description": "Asynchronous, non-blocking SQLite3 bindings",
-	"keywords": [
-		"land"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandNodeSQLite3#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandNodeSQLite3/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandNodeSQLite3.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "🛬 Land —",
-		"email": "Land@PlayForm.Cloud",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
 	"contributors": [
 		"Konstantin Käfer <mail@kkaefer.com>",
 		"Dane Springmeyer <dane@mapbox.com>",
@@ -38,7 +19,6 @@
 		"Mithgol",
 		"Ben Noordhuis <ben@strongloop.com>"
 	],
-	"type": "module",
 	"main": "./lib/sqlite3",
 	"types": "./lib/sqlite3.d.ts",
 	"files": [
@@ -69,11 +49,7 @@
 		"tar": "7.1.0"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.7",
-		"@playform/document": "0.0.6"
-	},
-	"publishConfig": {
-		"access": "public"
+		"@playform/build": "0.0.7"
 	},
 	"renovate": {
 		"extends": [
