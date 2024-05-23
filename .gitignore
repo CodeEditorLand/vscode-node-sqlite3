@@ -9,7 +9,6 @@ build
 out
 Release
 Debug
-node_modules
 .deps
 Makefile.gyp
 gyp-mac-tool
