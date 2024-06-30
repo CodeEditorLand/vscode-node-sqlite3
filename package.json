@@ -1,15 +1,6 @@
 {
-	"binary": {
-		"host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
-		"module_name": "node_sqlite3",
-		"module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
-		"napi_versions": [
-			3,
-			6
-		],
-		"package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
-		"remote_path": "v{version}"
-	},
+	"name": "@vscode/sqlite3",
+	"description": "Asynchronous, non-blocking SQLite3 bindings",
 	"contributors": [
 		"Konstantin Käfer <mail@kkaefer.com>",
 		"Dane Springmeyer <dane@mapbox.com>",
@@ -28,12 +19,8 @@
 		"Mithgol",
 		"Ben Noordhuis <ben@strongloop.com>"
 	],
-	"dependencies": {
-		"node-addon-api": "8.0.0",
-		"tar": "7.4.0"
-	},
-	"description": "Asynchronous, non-blocking SQLite3 bindings",
-	"devDependencies": {},
+	"main": "./lib/sqlite3",
+	"types": "./lib/sqlite3.d.ts",
 	"files": [
 		"binding.gyp",
 		"deps/",
@@ -41,15 +28,28 @@
 		"lib/*.d.ts",
 		"src/"
 	],
-	"main": "./lib/sqlite3",
-	"name": "@vscode/sqlite3",
-	"renovate": {
-		"extends": [
-			"@tryghost:base"
+	"binary": {
+		"module_name": "node_sqlite3",
+		"module_path": "./lib/binding/napi-v{napi_build_version}-{platform}-{libc}-{arch}",
+		"remote_path": "v{version}",
+		"package_name": "napi-v{napi_build_version}-{platform}-{libc}-{arch}.tar.gz",
+		"host": "https://github.com/TryGhost/node-sqlite3/releases/download/",
+		"napi_versions": [
+			3,
+			6
 		]
 	},
 	"scripts": {
 		"pack": "node-pre-gyp package"
 	},
-	"types": "./lib/sqlite3.d.ts"
+	"dependencies": {
+		"node-addon-api": "8.0.0",
+		"tar": "7.4.0"
+	},
+	"devDependencies": {},
+	"renovate": {
+		"extends": [
+			"@tryghost:base"
+		]
+	}
 }
