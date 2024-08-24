@@ -1,0 +1,218 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta name="keywords" content="@playform/document"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@vscode/sqlite3</title><meta name="description" content="Documentation for @vscode/sqlite3"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><link rel="stylesheet" href="assets/custom.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@vscode/sqlite3</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>@vscode/sqlite3</h2></div><div class="tsd-panel tsd-typography"><a id="md:⚙️-node-sqlite3" class="tsd-anchor"></a><h1 class="tsd-anchor-link">⚙️ node-sqlite3<a href="#md:⚙️-node-sqlite3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>Asynchronous, non-blocking <a href="https://sqlite.org/">SQLite3</a> bindings for
+<a href="http://nodejs.org/">Node.js</a>.</p>
+<p><a href="https://www.npmjs.com/package/sqlite3"><img src="https://img.shields.io/github/release/TryGhost/node-sqlite3.svg" alt="Latest release"></a>
+<img src="https://github.com/TryGhost/node-sqlite3/workflows/CI/badge.svg?branch=master" alt="Build Status">
+<a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmapbox%2Fnode-sqlite3?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmapbox%2Fnode-sqlite3.svg?type=shield" alt="FOSSA Status"></a>
+<a href="https://nodejs.org/dist/latest/docs/api/n-api.html#n_api_n_api"><img src="https://img.shields.io/badge/N--API-v3-green.svg" alt="N-API v3 Badge"></a>
+<a href="https://nodejs.org/dist/latest/docs/api/n-api.html#n_api_n_api"><img src="https://img.shields.io/badge/N--API-v6-green.svg" alt="N-API v6 Badge"></a></p>
+<a id="md:features" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Features<a href="#md:features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><ul>
+<li>Straightforward query and parameter binding interface</li>
+<li>Full Buffer/Blob support</li>
+<li>Extensive
+<a href="https://github.com/tryghost/node-sqlite3/wiki/Debugging">debugging support</a></li>
+<li><a href="https://github.com/tryghost/node-sqlite3/wiki/Control-Flow">Query serialization</a>
+API</li>
+<li><a href="https://github.com/TryGhost/node-sqlite3/wiki/API#databaseloadextensionpath-callback">Extension support</a>,
+including bundled support for the
+<a href="https://www.sqlite.org/json1.html">json1 extension</a></li>
+<li>Big test suite</li>
+<li>Written in modern C++ and tested for memory leaks</li>
+<li>Bundles SQLite v3.39.4, or you can build using a local SQLite</li>
+</ul>
+<a id="md:installing" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Installing<a href="#md:installing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>You can use <a href="https://github.com/npm/cli"><code>npm</code></a> or
+<a href="https://github.com/yarnpkg/yarn"><code>yarn</code></a> to install <code>sqlite3</code>:</p>
+<ul>
+<li>(recommended) Latest published package:</li>
+</ul>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><br/><span class="hl-3"># or</span><br/><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span>
+</code><button type="button">Copy</button></pre>
+
+<ul>
+<li>GitHub's <code>master</code> branch:
+<code>npm install https://github.com/tryghost/node-sqlite3/tarball/master</code></li>
+</ul>
+<a id="md:prebuilt-binaries" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Prebuilt binaries<a href="#md:prebuilt-binaries" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><code>sqlite3</code> v5+ was rewritten to use <a href="https://nodejs.org/api/n-api.html">Node-API</a>
+so prebuilt binaries do not need to be built for specific Node versions.
+<code>sqlite3</code> currently builds for both Node-API v3 and v6. Check the
+<a href="https://nodejs.org/api/n-api.html#node-api-version-matrix">Node-API version matrix</a>
+to ensure your Node version supports one of these. The prebuilt binaries should
+be supported on Node v10+.</p>
+<p>The module uses <a href="https://github.com/mapbox/node-pre-gyp">node-pre-gyp</a> to
+download the prebuilt binary for your platform, if it exists. These binaries are
+hosted on GitHub Releases for <code>sqlite3</code> versions above 5.0.2, and they are
+hosted on S3 otherwise. The following targets are currently provided:</p>
+<p>Format: <code>napi-v{napi_build_version}-{platform}-{libc}-{arch}</code></p>
+<ul>
+<li><code>napi-v3-darwin-unknown-arm64</code></li>
+<li><code>napi-v3-darwin-unknown-x64</code></li>
+<li><code>napi-v3-linux-glibc-arm64</code></li>
+<li><code>napi-v3-linux-glibc-x64</code></li>
+<li><code>napi-v3-linux-musl-arm64</code></li>
+<li><code>napi-v3-linux-musl-x64</code></li>
+<li><code>napi-v3-win32-unknown-ia32</code></li>
+<li><code>napi-v3-win32-unknown-x64</code></li>
+<li><code>napi-v6-darwin-unknown-arm64</code></li>
+<li><code>napi-v6-darwin-unknown-x64</code></li>
+<li><code>napi-v6-linux-glibc-arm64</code></li>
+<li><code>napi-v6-linux-glibc-x64</code></li>
+<li><code>napi-v6-linux-musl-arm64</code></li>
+<li><code>napi-v6-linux-musl-x64</code></li>
+<li><code>napi-v6-win32-unknown-ia32</code></li>
+<li><code>napi-v6-win32-unknown-x64</code></li>
+</ul>
+<p>Unfortunately, <a href="https://github.com/mapbox/node-pre-gyp">node-pre-gyp</a> cannot
+differentiate between <code>armv6</code> and <code>armv7</code>, and instead uses <code>arm</code> as the
+<code>{arch}</code>. Until that is fixed, you will still need to install <code>sqlite3</code> from
+<a href="#md:source-install">source</a>.</p>
+<p>Support for other platforms and architectures may be added in the future if CI
+supports building on them.</p>
+<p>If your environment isn't supported, it'll use <code>node-gyp</code> to build SQLite but
+you will need to install a C++ compiler and linker.</p>
+<a id="md:other-ways-to-install" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Other ways to install<a href="#md:other-ways-to-install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>It is also possible to make your own build of <code>sqlite3</code> from its source
+instead of its npm package (<a href="#md:source-install">See below.</a>).</p>
+<p>The <code>sqlite3</code> module also works with
+<a href="https://github.com/rogerwang/node-webkit">node-webkit</a> if node-webkit contains
+a supported version of Node.js engine. <a href="#md:building-for-node-webkit">(See below.)</a></p>
+<p>SQLite's <a href="https://github.com/sqlcipher/sqlcipher">SQLCipher extension</a> is also
+supported. <a href="#md:building-for-sqlcipher">(See below.)</a></p>
+<a id="md:api" class="tsd-anchor"></a><h1 class="tsd-anchor-link">API<a href="#md:api" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>See the <a href="https://github.com/TryGhost/node-sqlite3/wiki/API">API documentation</a>
+in the wiki.</p>
+<a id="md:usage" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Usage<a href="#md:usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><strong>Note:</strong> the module must be <a href="#md:installing">installed</a> before use.</p>
+<pre><code class="js"><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">sqlite3</span><span class="hl-1"> = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&quot;sqlite3&quot;</span><span class="hl-1">).</span><span class="hl-0">verbose</span><span class="hl-1">();</span><br/><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">db</span><span class="hl-1"> = </span><span class="hl-4">new</span><span class="hl-1"> </span><span class="hl-6">sqlite3</span><span class="hl-1">.</span><span class="hl-0">Database</span><span class="hl-1">(</span><span class="hl-2">&quot;:memory:&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-6">db</span><span class="hl-1">.</span><span class="hl-0">serialize</span><span class="hl-1">(() </span><span class="hl-4">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">	</span><span class="hl-6">db</span><span class="hl-1">.</span><span class="hl-0">run</span><span class="hl-1">(</span><span class="hl-2">&quot;CREATE TABLE lorem (info TEXT)&quot;</span><span class="hl-1">);</span><br/><br/><span class="hl-1">	</span><span class="hl-4">const</span><span class="hl-1"> </span><span class="hl-5">stmt</span><span class="hl-1"> = </span><span class="hl-6">db</span><span class="hl-1">.</span><span class="hl-0">prepare</span><span class="hl-1">(</span><span class="hl-2">&quot;INSERT INTO lorem VALUES (?)&quot;</span><span class="hl-1">);</span><br/><span class="hl-1">	</span><span class="hl-7">for</span><span class="hl-1"> (</span><span class="hl-4">let</span><span class="hl-1"> </span><span class="hl-6">i</span><span class="hl-1"> = </span><span class="hl-8">0</span><span class="hl-1">; </span><span class="hl-6">i</span><span class="hl-1"> &lt; </span><span class="hl-8">10</span><span class="hl-1">; </span><span class="hl-6">i</span><span class="hl-1">++) {</span><br/><span class="hl-1">		</span><span class="hl-6">stmt</span><span class="hl-1">.</span><span class="hl-0">run</span><span class="hl-1">(</span><span class="hl-2">&quot;Ipsum &quot;</span><span class="hl-1"> + </span><span class="hl-6">i</span><span class="hl-1">);</span><br/><span class="hl-1">	}</span><br/><span class="hl-1">	</span><span class="hl-6">stmt</span><span class="hl-1">.</span><span class="hl-0">finalize</span><span class="hl-1">();</span><br/><br/><span class="hl-1">	</span><span class="hl-6">db</span><span class="hl-1">.</span><span class="hl-0">each</span><span class="hl-1">(</span><span class="hl-2">&quot;SELECT rowid AS id, info FROM lorem&quot;</span><span class="hl-1">, (</span><span class="hl-6">err</span><span class="hl-1">, </span><span class="hl-6">row</span><span class="hl-1">) </span><span class="hl-4">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">		</span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">row</span><span class="hl-1">.</span><span class="hl-6">id</span><span class="hl-1"> + </span><span class="hl-2">&quot;: &quot;</span><span class="hl-1"> + </span><span class="hl-6">row</span><span class="hl-1">.</span><span class="hl-6">info</span><span class="hl-1">);</span><br/><span class="hl-1">	});</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-6">db</span><span class="hl-1">.</span><span class="hl-0">close</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:source-install" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Source install<a href="#md:source-install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To skip searching for pre-compiled binaries, and force a build from source, use</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The sqlite3 module depends only on libsqlite3. However, by default, an
+internal/bundled copy of sqlite will be built and statically linked, so an
+externally installed sqlite3 is not required.</p>
+<p>If you wish to install against an external sqlite then you need to pass the
+<code>--sqlite</code> argument to <code>npm</code> wrapper:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite=/usr/local</span>
+</code><button type="button">Copy</button></pre>
+
+<p>If building against an external sqlite3 make sure to have the development
+headers available. Mac OS X ships with these by default. If you don't have them
+installed, install the <code>-dev</code> package with your package manager, e.g.
+<code>apt-get install libsqlite3-dev</code> for Debian/Ubuntu. Make sure that you have at
+least <code>libsqlite3</code> &gt;= 3.6.</p>
+<p>Note, if building against homebrew-installed sqlite on OS X you can do:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite=/usr/local/opt/sqlite/</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:custom-file-header-magic" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Custom file header (magic)<a href="#md:custom-file-header-magic" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The default sqlite file header is &quot;SQLite format 3&quot;. You can specify a different
+magic, though this will make standard tools and libraries unable to work with
+your files.</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite_magic=</span><span class="hl-2">&quot;MyCustomMagic15&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Note that the magic <em>must</em> be exactly 15 characters long (16 bytes including
+null terminator).</p>
+<a id="md:building-for-node-webkit" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Building for node-webkit<a href="#md:building-for-node-webkit" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Because of ABI differences, <code>sqlite3</code> must be built in a custom to be used
+with <a href="https://github.com/rogerwang/node-webkit">node-webkit</a>.</p>
+<p>To build <code>sqlite3</code> for node-webkit:</p>
+<ol>
+<li>
+<p>Install <a href="https://github.com/rogerwang/nw-gyp"><code>nw-gyp</code></a> globally:
+<code>npm install nw-gyp -g</code> <em>(unless already installed)</em></p>
+</li>
+<li>
+<p>Build the module with the custom flags of <code>--runtime</code>, <code>--target_arch</code>, and
+<code>--target</code>:</p>
+</li>
+</ol>
+<pre><code class="bash"><span class="hl-6">NODE_WEBKIT_VERSION</span><span class="hl-1">=</span><span class="hl-2">&quot;0.8.6&quot;</span><span class="hl-1"> </span><span class="hl-3"># see latest version at https://github.com/rogerwang/node-webkit#downloads</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--runtime=node-webkit</span><span class="hl-1"> </span><span class="hl-4">--target_arch=ia32</span><span class="hl-1"> </span><span class="hl-4">--target=$(</span><span class="hl-0">NODE_WEBKIT_VERSION</span><span class="hl-4">)</span>
+</code><button type="button">Copy</button></pre>
+
+<p>This command internally calls out to
+<a href="https://github.com/mapbox/node-pre-gyp"><code>node-pre-gyp</code></a> which itself calls out
+to <a href="https://github.com/rogerwang/nw-gyp"><code>nw-gyp</code></a> when the
+<code>--runtime=node-webkit</code> option is passed.</p>
+<p>You can also run this command from within a <code>sqlite3</code> checkout:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--runtime=node-webkit</span><span class="hl-1"> </span><span class="hl-4">--target_arch=ia32</span><span class="hl-1"> </span><span class="hl-4">--target=$(</span><span class="hl-0">NODE_WEBKIT_VERSION</span><span class="hl-4">)</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Remember the following:</p>
+<ul>
+<li>
+<p>You must provide the right <code>--target_arch</code> flag. <code>ia32</code> is needed to target
+32bit node-webkit builds, while <code>x64</code> will target 64bit node-webkit builds
+(if available for your platform).</p>
+</li>
+<li>
+<p>After the <code>sqlite3</code> package is built for node-webkit it cannot run
+in the vanilla Node.js (and vice versa).</p>
+<ul>
+<li>For example, <code>npm test</code> of the node-webkit's package would fail.</li>
+</ul>
+</li>
+</ul>
+<p>Visit the
+“<a href="https://github.com/rogerwang/node-webkit/wiki/Using-Node-modules">Using Node modules</a>”
+article in the node-webkit's wiki for more details.</p>
+<a id="md:building-for-sqlcipher" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Building for SQLCipher<a href="#md:building-for-sqlcipher" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>For instructions on building SQLCipher, see
+<a href="https://coolaj86.com/articles/building-sqlcipher-for-node-js-on-raspberry-pi-2/">Building SQLCipher for Node.js</a>.
+Alternatively, you can install it with your local package manager.</p>
+<p>To run against SQLCipher, you need to compile <code>sqlite3</code> from source by passing
+build options like:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite_libname=sqlcipher</span><span class="hl-1"> </span><span class="hl-4">--sqlite=/usr/</span><br/><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-4">-e</span><span class="hl-1"> </span><span class="hl-2">&#39;require(&quot;sqlite3&quot;)&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<p>If your SQLCipher is installed in a custom location (if you compiled and
+installed it yourself), you'll need to set some environment variables:</p>
+<a id="md:on-os-x-with-homebrew" class="tsd-anchor"></a><h3 class="tsd-anchor-link">On OS X with Homebrew<a href="#md:on-os-x-with-homebrew" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Set the location where <code>brew</code> installed it:</p>
+<pre><code class="bash"><span class="hl-4">export</span><span class="hl-1"> </span><span class="hl-6">LDFLAGS</span><span class="hl-1">=</span><span class="hl-2">&quot;-L$(</span><span class="hl-0">brew</span><span class="hl-2"> </span><span class="hl-4">--prefix</span><span class="hl-2">)/opt/sqlcipher/lib&quot;</span><br/><span class="hl-4">export</span><span class="hl-1"> </span><span class="hl-6">CPPFLAGS</span><span class="hl-1">=</span><span class="hl-2">&quot;-I$(</span><span class="hl-0">brew</span><span class="hl-2"> </span><span class="hl-4">--prefix</span><span class="hl-2">)/opt/sqlcipher/include/sqlcipher&quot;</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite_libname=sqlcipher</span><span class="hl-1"> </span><span class="hl-4">--sqlite=$(</span><span class="hl-0">brew</span><span class="hl-4"> --prefix)</span><br/><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-4">-e</span><span class="hl-1"> </span><span class="hl-2">&#39;require(&quot;sqlite3&quot;)&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:on-most-linuxes-including-raspberry-pi" class="tsd-anchor"></a><h3 class="tsd-anchor-link">On most Linuxes (including Raspberry Pi)<a href="#md:on-most-linuxes-including-raspberry-pi" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Set the location where <code>make</code> installed it:</p>
+<pre><code class="bash"><span class="hl-4">export</span><span class="hl-1"> </span><span class="hl-6">LDFLAGS</span><span class="hl-1">=</span><span class="hl-2">&quot;-L/usr/local/lib&quot;</span><br/><span class="hl-4">export</span><span class="hl-1"> </span><span class="hl-6">CPPFLAGS</span><span class="hl-1">=</span><span class="hl-2">&quot;-I/usr/local/include -I/usr/local/include/sqlcipher&quot;</span><br/><span class="hl-4">export</span><span class="hl-1"> </span><span class="hl-6">CXXFLAGS</span><span class="hl-1">=</span><span class="hl-2">&quot;</span><span class="hl-6">$CPPFLAGS</span><span class="hl-2">&quot;</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite_libname=sqlcipher</span><span class="hl-1"> </span><span class="hl-4">--sqlite=/usr/local</span><span class="hl-1"> </span><span class="hl-4">--verbose</span><br/><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-4">-e</span><span class="hl-1"> </span><span class="hl-2">&#39;require(&quot;sqlite3&quot;)&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:custom-builds-and-electron" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Custom builds and Electron<a href="#md:custom-builds-and-electron" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Running <code>sqlite3</code> through
+<a href="https://github.com/electron/electron-rebuild">electron-rebuild</a> does not
+preserve the SQLCipher extension, so some additional flags are needed to make
+this build Electron compatible. Your <code>npm install sqlite3 --build-from-source</code>
+command needs these additional flags (be sure to replace the target version with
+the current Electron version you are working with):</p>
+<pre><code class="bash"><span class="hl-6">--runtime</span><span class="hl-1">=</span><span class="hl-2">electron</span><span class="hl-1"> </span><span class="hl-6">--target</span><span class="hl-1">=</span><span class="hl-2">18.2.1</span><span class="hl-1"> </span><span class="hl-6">--dist-url</span><span class="hl-1">=</span><span class="hl-2">https://electronjs.org/headers</span>
+</code><button type="button">Copy</button></pre>
+
+<p>In the case of MacOS with Homebrew, the command should look like the following:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">sqlite3</span><span class="hl-1"> </span><span class="hl-4">--build-from-source</span><span class="hl-1"> </span><span class="hl-4">--sqlite_libname=sqlcipher</span><span class="hl-1"> </span><span class="hl-4">--sqlite=$(</span><span class="hl-0">brew</span><span class="hl-4"> --prefix)</span><span class="hl-1"> </span><span class="hl-4">--runtime=electron</span><span class="hl-1"> </span><span class="hl-4">--target=18.2.1</span><span class="hl-1"> </span><span class="hl-4">--dist-url=https://electronjs.org/headers</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:testing" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Testing<a href="#md:testing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">test</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:contributors" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Contributors<a href="#md:contributors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><ul>
+<li><a href="https://github.com/kkaefer">Konstantin Käfer</a></li>
+<li><a href="https://github.com/springmeyer">Dane Springmeyer</a></li>
+<li><a href="https://github.com/willwhite">Will White</a></li>
+<li><a href="https://github.com/orlandov">Orlando Vazquez</a></li>
+<li><a href="https://github.com/artiz">Artem Kustikov</a></li>
+<li><a href="https://github.com/grumdrig">Eric Fredricksen</a></li>
+<li><a href="https://github.com/mrjjwright">John Wright</a></li>
+<li><a href="https://github.com/ry">Ryan Dahl</a></li>
+<li><a href="https://github.com/tmcw">Tom MacWright</a></li>
+<li><a href="https://github.com/carter-thaxton">Carter Thaxton</a></li>
+<li><a href="https://github.com/audriusk">Audrius Kažukauskas</a></li>
+<li><a href="https://github.com/pyneo">Johannes Schauer</a></li>
+<li><a href="https://github.com/Mithgol">Mithgol</a></li>
+<li><a href="https://github.com/kewde">Kewde</a></li>
+</ul>
+<a id="md:acknowledgments" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Acknowledgments<a href="#md:acknowledgments" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>Thanks to <a href="https://github.com/orlandov">Orlando Vazquez</a>,
+<a href="https://github.com/grumdrig">Eric Fredricksen</a> and
+<a href="https://github.com/ry">Ryan Dahl</a> for their SQLite bindings for node, and to
+mraleph on Freenode's #v8 for answering questions.</p>
+<p>This module was originally created by <a href="https://mapbox.com/">Mapbox</a> &amp; is now
+maintained by <a href="https://ghost.org">Ghost</a>.</p>
+<a id="md:changelog" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Changelog<a href="#md:changelog" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>We use <a href="https://github.com/TryGhost/node-sqlite3/releases">GitHub releases</a> for
+notes on the latest versions. See
+<a href="https://github.com/TryGhost/node-sqlite3/blob/b05f4594cf8b0de64743561fcd2cfe6f4571754d/CHANGELOG.md">CHANGELOG.md</a>
+in git history for details on older versions.</p>
+<a id="md:license" class="tsd-anchor"></a><h1 class="tsd-anchor-link">License<a href="#md:license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><code>node-sqlite3</code> is
+<a href="https://github.com/tryghost/node-sqlite3/raw/master/LICENSE">BSD licensed</a>.</p>
+<p><a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmapbox%2Fnode-sqlite3?ref=badge_large"><img src="https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fmapbox%2Fnode-sqlite3.svg?type=large" alt="FOSSA Status"></a></p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:⚙️-node-sqlite3"><span>⚙️ node-<wbr/>sqlite3</span></a><a href="#md:features"><span>Features</span></a><a href="#md:installing"><span>Installing</span></a><ul><li><ul><li><a href="#md:prebuilt-binaries"><span>Prebuilt binaries</span></a></li><li><a href="#md:other-ways-to-install"><span>Other ways to install</span></a></li></ul></li></ul><a href="#md:api"><span>API</span></a><a href="#md:usage"><span>Usage</span></a><ul><li><a href="#md:source-install"><span>Source install</span></a></li><li><a href="#md:custom-file-header-magic"><span>Custom file header (magic)</span></a></li><li><a href="#md:building-for-node-webkit"><span>Building for node-<wbr/>webkit</span></a></li><li><a href="#md:building-for-sqlcipher"><span>Building for SQLCipher</span></a></li><li><ul><li><a href="#md:on-os-x-with-homebrew"><span>On OS <wbr/>X with <wbr/>Homebrew</span></a></li><li><a href="#md:on-most-linuxes-including-raspberry-pi"><span>On most <wbr/>Linuxes (including <wbr/>Raspberry <wbr/>Pi)</span></a></li><li><a href="#md:custom-builds-and-electron"><span>Custom builds and <wbr/>Electron</span></a></li></ul></li></ul><a href="#md:testing"><span>Testing</span></a><a href="#md:contributors"><span>Contributors</span></a><a href="#md:acknowledgments"><span>Acknowledgments</span></a><a href="#md:changelog"><span>Changelog</span></a><a href="#md:license"><span>License</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@vscode/sqlite3</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
