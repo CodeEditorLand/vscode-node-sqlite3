@@ -29,8 +29,8 @@
 		"Ben Noordhuis <ben@strongloop.com>"
 	],
 	"dependencies": {
-		"node-addon-api": "^8.2.0",
-		"tar": "^7.4.3"
+		"node-addon-api": "8.2.0",
+		"tar": "7.4.3"
 	},
 	"description": "Asynchronous, non-blocking SQLite3 bindings",
 	"devDependencies": {},
