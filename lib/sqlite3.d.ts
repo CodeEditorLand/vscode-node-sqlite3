@@ -81,7 +81,9 @@ export class Statement extends events.EventEmitter {
     run(...params: any[]): this;
 
     get(callback?: (err: Error | null, row?: any) => void): this;
+
     get(params: any, callback?: (this: RunResult, err: Error | null, row?: any) => void): this;
+
     get(...params: any[]): this;
 
     all(callback?: (err: Error | null, rows: any[]) => void): this;
@@ -95,6 +97,7 @@ export class Statement extends events.EventEmitter {
 
 export class Database extends events.EventEmitter {
     constructor(filename: string, callback?: (err: Error | null) => void);
+
     constructor(filename: string, mode?: number, callback?: (err: Error | null) => void);
 
     close(callback?: (err: Error | null) => void): void;
@@ -104,7 +107,9 @@ export class Database extends events.EventEmitter {
     run(sql: string, ...params: any[]): this;
 
     get(sql: string, callback?: (this: Statement, err: Error | null, row: any) => void): this;
+
     get(sql: string, params: any, callback?: (this: Statement, err: Error | null, row: any) => void): this;
+
     get(sql: string, ...params: any[]): this;
 
     all(sql: string, callback?: (this: Statement, err: Error | null, rows: any[]) => void): this;
