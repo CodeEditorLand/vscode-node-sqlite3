@@ -6,56 +6,95 @@
 import events = require("events");
 
 export const OPEN_READONLY: number;
+
 export const OPEN_READWRITE: number;
+
 export const OPEN_CREATE: number;
+
 export const OPEN_FULLMUTEX: number;
+
 export const OPEN_SHAREDCACHE: number;
+
 export const OPEN_PRIVATECACHE: number;
+
 export const OPEN_URI: number;
 
 export const VERSION: string;
+
 export const SOURCE_ID: string;
+
 export const VERSION_NUMBER: number;
 
 export const OK: number;
+
 export const ERROR: number;
+
 export const INTERNAL: number;
+
 export const PERM: number;
+
 export const ABORT: number;
+
 export const BUSY: number;
+
 export const LOCKED: number;
+
 export const NOMEM: number;
+
 export const READONLY: number;
+
 export const INTERRUPT: number
 export const IOERR: number;
+
 export const CORRUPT: number
 export const NOTFOUND: number;
+
 export const FULL: number;
+
 export const CANTOPEN: number;
+
 export const PROTOCOL: number;
+
 export const EMPTY: number;
+
 export const SCHEMA: number;
+
 export const TOOBIG: number
 export const CONSTRAINT: number
 export const MISMATCH: number;
+
 export const MISUSE: number;
+
 export const NOLFS: number;
+
 export const AUTH: number
 export const FORMAT: number;
+
 export const RANGE: number
 export const NOTADB: number;
 
 export const LIMIT_LENGTH: number;
+
 export const LIMIT_SQL_LENGTH: number;
+
 export const LIMIT_COLUMN: number;
+
 export const LIMIT_EXPR_DEPTH: number;
+
 export const LIMIT_COMPOUND_SELECT: number;
+
 export const LIMIT_VDBE_OP: number;
+
 export const LIMIT_FUNCTION_ARG: number;
+
 export const LIMIT_ATTACHED: number;
+
 export const LIMIT_LIKE_PATTERN_LENGTH: number;
+
 export const LIMIT_VARIABLE_NUMBER: number;
+
 export const LIMIT_TRIGGER_DEPTH: number;
+
 export const LIMIT_WORKER_THREADS: number;
 
 export const cached: {
