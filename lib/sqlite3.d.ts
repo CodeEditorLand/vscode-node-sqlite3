@@ -99,16 +99,19 @@ export const LIMIT_WORKER_THREADS: number;
 
 export const cached: {
     Database(filename: string, callback?: (this: Database, err: Error | null) => void): Database;
+
     Database(filename: string, mode?: number, callback?: (this: Database, err: Error | null) => void): Database;
 };
 
 export interface RunResult extends Statement {
     lastID: number;
+
     changes: number;
 }
 
 export class Statement extends events.EventEmitter {
     bind(callback?: (err: Error | null) => void): this;
+
     bind(...params: any[]): this;
 
     reset(callback?: (err: null) => void): this;
@@ -116,7 +119,9 @@ export class Statement extends events.EventEmitter {
     finalize(callback?: (err: Error) => void): Database;
 
     run(callback?: (err: Error | null) => void): this;
+
     run(params: any, callback?: (this: RunResult, err: Error | null) => void): this;
+
     run(...params: any[]): this;
 
     get(callback?: (err: Error | null, row?: any) => void): this;
@@ -126,11 +131,15 @@ export class Statement extends events.EventEmitter {
     get(...params: any[]): this;
 
     all(callback?: (err: Error | null, rows: any[]) => void): this;
+
     all(params: any, callback?: (this: RunResult, err: Error | null, rows: any[]) => void): this;
+
     all(...params: any[]): this;
 
     each(callback?: (err: Error | null, row: any) => void, complete?: (err: Error | null, count: number) => void): this;
+
     each(params: any, callback?: (this: RunResult, err: Error | null, row: any) => void, complete?: (err: Error | null, count: number) => void): this;
+
     each(...params: any[]): this;
 }
 
@@ -142,7 +151,9 @@ export class Database extends events.EventEmitter {
     close(callback?: (err: Error | null) => void): void;
 
     run(sql: string, callback?: (this: RunResult, err: Error | null) => void): this;
+
     run(sql: string, params: any, callback?: (this: RunResult, err: Error | null) => void): this;
+
     run(sql: string, ...params: any[]): this;
 
     get(sql: string, callback?: (this: Statement, err: Error | null, row: any) => void): this;
@@ -152,30 +163,43 @@ export class Database extends events.EventEmitter {
     get(sql: string, ...params: any[]): this;
 
     all(sql: string, callback?: (this: Statement, err: Error | null, rows: any[]) => void): this;
+
     all(sql: string, params: any, callback?: (this: Statement, err: Error | null, rows: any[]) => void): this;
+
     all(sql: string, ...params: any[]): this;
 
     each(sql: string, callback?: (this: Statement, err: Error | null, row: any) => void, complete?: (err: Error | null, count: number) => void): this;
+
     each(sql: string, params: any, callback?: (this: Statement, err: Error | null, row: any) => void, complete?: (err: Error | null, count: number) => void): this;
+
     each(sql: string, ...params: any[]): this;
 
     exec(sql: string, callback?: (this: Statement, err: Error | null) => void): this;
 
     prepare(sql: string, callback?: (this: Statement, err: Error | null) => void): Statement;
+
     prepare(sql: string, params: any, callback?: (this: Statement, err: Error | null) => void): Statement;
+
     prepare(sql: string, ...params: any[]): Statement;
 
     serialize(callback?: () => void): void;
+
     parallelize(callback?: () => void): void;
 
     on(event: "trace", listener: (sql: string) => void): this;
+
     on(event: "profile", listener: (sql: string, time: number) => void): this;
+
     on(event: "change", listener: (type: string, database: string, table: string, rowid: number) => void): this;
+
     on(event: "error", listener: (err: Error) => void): this;
+
     on(event: "open" | "close", listener: () => void): this;
+
     on(event: string, listener: (...args: any[]) => void): this;
 
     configure(option: "busyTimeout", value: number): void;
+
     configure(option: "limit", id: number, value: number): void;
 
     loadExtension(filename: string, callback?: (err: Error | null) => void): this;
@@ -189,61 +213,104 @@ export function verbose(): sqlite3;
 
 export interface sqlite3 {
     OPEN_READONLY: number;
+
     OPEN_READWRITE: number;
+
     OPEN_CREATE: number;
+
     OPEN_FULLMUTEX: number;
+
     OPEN_SHAREDCACHE: number;
+
     OPEN_PRIVATECACHE: number;
+
     OPEN_URI: number;
 
     VERSION: string;
+
     SOURCE_ID: string;
+
     VERSION_NUMBER: number;
 
     OK: number;
+
     ERROR: number;
+
     INTERNAL: number;
+
     PERM: number;
+
     ABORT: number;
+
     BUSY: number;
+
     LOCKED: number;
+
     NOMEM: number;
+
     READONLY: number;
+
     INTERRUPT: number
     IOERR: number;
+
     CORRUPT: number
     NOTFOUND: number;
+
     FULL: number;
+
     CANTOPEN: number;
+
     PROTOCOL: number;
+
     EMPTY: number;
+
     SCHEMA: number;
+
     TOOBIG: number
     CONSTRAINT: number
     MISMATCH: number;
+
     MISUSE: number;
+
     NOLFS: number;
+
     AUTH: number
     FORMAT: number;
+
     RANGE: number
     NOTADB: number;
 
     LIMIT_LENGTH: number;
+
     LIMIT_SQL_LENGTH: number;
+
     LIMIT_COLUMN: number;
+
     LIMIT_EXPR_DEPTH: number;
+
     LIMIT_COMPOUND_SELECT: number;
+
     LIMIT_VDBE_OP: number;
+
     LIMIT_FUNCTION_ARG: number;
+
     LIMIT_ATTACHED: number;
+
     LIMIT_LIKE_PATTERN_LENGTH: number;
+
     LIMIT_VARIABLE_NUMBER: number;
+
     LIMIT_TRIGGER_DEPTH: number;
+
     LIMIT_WORKER_THREADS: number;
 
     cached: typeof cached;
+
     RunResult: RunResult;
+
     Statement: typeof Statement;
+
     Database: typeof Database;
+
     verbose(): this;
 }
