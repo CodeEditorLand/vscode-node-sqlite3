@@ -42,7 +42,7 @@
 		"src/"
 	],
 	"main": "./lib/sqlite3",
-	"name": "@vscode/sqlite3",
+	"name": "@codeeditorland/sqlite3",
 	"renovate": {
 		"extends": [
 			"@tryghost:base"
